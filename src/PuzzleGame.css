@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #66ccff,
+    #3399ff
+  ); /* Gradient background */
+}
+
+.header {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Semi-transparent black background for the header */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 36px;
+}
+
+.puzzle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin-top: -10rem;
+}
+
+.puzzle-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  width: 100px;
+  height: 100px;
+  background-color: #ffcc66; /* Yellow background color */
+  color: #333; /* Dark text color */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.puzzle-tile.empty {
+  background-color: #ddd; /* Light grey background color for empty tile */
+}
+
+.puzzle-tile:hover {
+  transform: translateY(-2px); /* Lift tile slightly on hover */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+@keyframes borderAnimation {
+  0% {
+    border: 1px solid transparent;
+  }
+  50% {
+    border: 1px solid #ffcc66; /* Yellow border color */
+  }
+  100% {
+    border: 1px solid transparent;
+  }
+}
+
+.puzzle-tile.animated-border {
+  animation: borderAnimation 1.5s infinite; /* Animated border effect */
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-container button {
+  background-color: #ff6666; /* Coral red button background color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #ff4d4d; /* Darker coral red button background color */
+  transform: scale(1.1); /* Scale button slightly on hover */
+}
+
+.highlight {
+  background-color: #ffd700; /* Gold background color */
+  color: #333; /* Dark text color */
+  padding: 2px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 30px;
+}
